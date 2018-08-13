@@ -14,15 +14,38 @@ parser.add_argument('--list', '-l', '--ls', action='store_true', help='Lists the
 parser.add_argument('--store', '-s', nargs=1, metavar='TAG', help='Store password at tag.')
 parser.add_argument('--get', '-g', nargs=1, metavar='TAG', help='Get value from tag.')
 parser.add_argument('--remove', '-r', nargs=1, metavar='TAG', help='Removes item from database. Requires override argument to be present as well.')
+parser.add_argument('--verify', '-v', action='store_true', help='Asks for the master key and/or password twice.')
+parser.add_argument('--printpass', action='store_true', help='Prints password back after being asked for it.')
+parser.add_argument('--printkey', action='store_true', help='Prints key back after being asked for it.')
 parser.add_argument('--override', '-f', action='store_true', help='Allows overwriting of preexisting data.')
 
 args = parser.parse_args()
 
 def ask_for_master_key():
-	return getpass.getpass('Please enter master key for tag: ')
+	key = getpass.getpass('Please enter master key for tag: ')
+	if args.printkey:
+		print("Key: " + key)
+	if args.verify:
+		keytwo = getpass.getpass('Please enter key again to verify: ')
+		if keytwo != key:
+			if args.printkey:
+				print("Verification key: " + keytwo)
+			print("No match. Try again.")
+			return ask_for_master_key()
+	return key
 
 def ask_for_password():
-	return getpass.getpass('Please enter password for tag: ')
+	password = getpass.getpass('Please enter password for tag: ')
+	if args.printpass:
+		print("Password: " + password)
+	if args.verify:
+		passwordtwo = getpass.getpass('Please enter password again to verify: ')
+		if passwordtwo != password:
+			if args.printpass:
+				print("Verification password: " + passwordtwo)
+			print("No match. Try again.")
+			return ask_for_password() 
+	return password
 
 def get_tags():
 	"""Lists all tags for currently stored passwords (just contents of db folder)"""
