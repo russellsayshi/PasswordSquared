@@ -31,3 +31,5 @@ optional arguments:
   --printkey            Prints key back after being asked for it.
   --override, -f        Allows overwriting of preexisting data.
 ```
+
+Something to add later: mask password length somehow
