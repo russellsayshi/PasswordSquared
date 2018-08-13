@@ -106,12 +106,12 @@ if args.remove != None:
 
 if args.store != None:
 	tag = verify_tag(args.store[0])
-	password = ask_for_password()
-	master_key = ask_for_master_key()
 	path = get_tag_path(tag)
 	if not args.override and os.path.isfile(path):
 		print("Cannot overwrite a tag without override flag.")
 	else:
+		password = ask_for_password()
+		master_key = ask_for_master_key()
 		with open(path, "w") as f:
 			f.write(perform_cipher(password, master_key, True))
 
