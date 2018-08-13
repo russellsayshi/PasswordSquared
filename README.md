@@ -7,7 +7,7 @@ It's deceptively simple, but it works wonders. This is just a short little tool 
 
 There's an example password which has been ciphered with the master key "password" if you want to download it and try it out.
 
-Each password is stored as its own file on the filesystem. Never fear though, because it doesn't matter if someone grabs your password files, because they don't have the master key, so the information is useless unless they are extremely clever. If you use a different master key for different passwords (perhaps based upon which letter they begin with) you can really throw 'em off.
+Each password is stored as its own file on the filesystem. Never fear though, because it doesn't matter if someone grabs your password files, because they don't have the master key, so the information (besides password length) is mostly useless unless they are extremely clever. If you use a different master key for different passwords (perhaps based upon which letter they begin with) you can really throw 'em off.
 
 However, if you use this, and something happens to your data/passwords, the liability is all yours. Use this at your own risk! I'm just putting this out there in case anyone finds it helpful.
 
