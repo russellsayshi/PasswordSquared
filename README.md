@@ -1,7 +1,7 @@
 # PasswordSquared
 Short little repo.
 
-This is based upon the idea that if I want to store some passwords, all I need to do to make my encryption pretty much unbreakable is to make a master key equal to or greater than the length of all my passwords, and then I just essentially do a letter by letter caesar cipher with the password and master key (add their characters together w/ a mod).
+This is based upon the idea that if I want to store some passwords, all I need to do to make my encryption pretty much unbreakable is to make a master key equal to or greater than the length of all my passwords, and then I just essentially do a letter by letter caesar cipher with the password and master key (add their characters together w/ a modulus).
 
 It's deceptively simple, but it works wonders. This is just a short little tool to help me manage my passwords.
 
