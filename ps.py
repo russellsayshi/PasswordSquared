@@ -81,7 +81,6 @@ def autocomplete(tag, tags):
 
 def perform_cipher(one, two, positive):
 	"""Shifts elements of one by values of characters of two in positional order, with sign determined by positive."""
-	res = ""
 	if len(one) > len(two):
 		raise ValueError("Length of object to be ciphered must be less than or equal to length of key.")
 	final = ""
