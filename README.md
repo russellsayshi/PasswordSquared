@@ -14,8 +14,8 @@ However, if you use this, and something happens to your data/passwords, the liab
 To get help, just run `python ps.py -h`. Here's what it outputs:
 
 ```
-usage: ps.py [-h] [--list] [--store TAG] [--get TAG] [--remove TAG]
-             [--override]
+usage: ps.py [-h] [--list] [--store TAG] [--get TAG] [--remove TAG] [--verify]
+             [--printpass] [--printkey] [--override]
 
 Stores and retrieves passwords through the use of a master key.
 
@@ -26,5 +26,8 @@ optional arguments:
   --get TAG, -g TAG     Get value from tag.
   --remove TAG, -r TAG  Removes item from database. Requires override argument
                         to be present as well.
+  --verify, -v          Asks for the master key and/or password twice.
+  --printpass           Prints password back after being asked for it.
+  --printkey            Prints key back after being asked for it.
   --override, -f        Allows overwriting of preexisting data.
 ```
